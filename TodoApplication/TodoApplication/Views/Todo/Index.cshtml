@@ -1,0 +1,42 @@
+﻿@model TodoApplication.Models.TodoApp
+
+@{
+    ViewData["Title"] = "Index Page";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h4>CRUD Application</h4>
+
+<h4>
+    <b>Id: </b> @ViewBag.id <br/>
+    <b>Name: </b> @ViewBag.Name <br />
+    <b>Number: </b> @ViewBag.Number <br />
+</h4>
+
+
+
+@{
+    ViewData["Title"] = "CREATE";
+
+}
+
+@using (Html.BeginForm("Create", "Todo", FormMethod.Post))
+{
+    <table>
+        <tr>
+            <td>Name:</td>
+            <td>@Html.TextBoxFor(m => m.Name)</td>
+        </tr>
+        <tr>
+            <td>Email ID:</td>
+            <td>@Html.TextBoxFor(m => m.EmailId)</td>
+        </tr>
+        <tr>
+            <td>Mobile Number:</td>
+            <td>@Html.TextBoxFor(m => m.Number)</td>
+        </tr>
+        <tr>
+            <td colspan="2"><input type="submit" value="Submit" /></td>
+        </tr>
+    </table>
+}

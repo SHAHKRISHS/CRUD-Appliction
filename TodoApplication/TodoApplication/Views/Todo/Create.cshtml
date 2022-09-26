@@ -1,0 +1,27 @@
+﻿@model TodoApplication.Models.TodoApp
+
+@{
+    ViewData["Title"] = "CREATE";
+
+}
+
+@using (Html.BeginForm("Create", "Todo", FormMethod.Post))
+{
+    <table>
+        <tr>
+            <td>Name:</td>
+            <td>@Html.TextBoxFor(m => m.Name)</td>
+        </tr>
+        <tr>
+            <td>Email ID:</td>
+            <td>@Html.TextBoxFor(m => m.EmailId)</td>
+        </tr>
+        <tr>
+            <td>Mobile Number:</td>
+            <td>@Html.TextBoxFor(m => m.Number)</td>
+        </tr>
+        <tr>
+            <td colspan="2"><input type="submit" value="Submit" /></td>
+        </tr>
+    </table>
+}
